@@ -12,8 +12,13 @@ stop:
 down:
 	- @${SERVICES} down
 
-logs-db:
-  - docker logs -f infra-database-1
+logsdb:
+	- docker logs -f infra-database-1
 
-logs-app:
-  - docker logs -f infra-app-1
+logsapp:
+	- docker logs -f infra-app-1
+
+test:
+	- docker exec -it infra-app-1 npm run test:watch
+
+  
