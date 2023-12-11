@@ -4,7 +4,7 @@ DOCKER_RUN = docker run -u root -it --rm --network=host -v ${PWD}:/usr/src/myapp
 SERVICES = docker compose --file infra/compose.yaml 
 
 up:
-	- @${SERVICES} up -d
+	- @${SERVICES} up -d --build
 
 stop:
 	- @${SERVICES} stop
@@ -17,6 +17,9 @@ logsdb:
 
 logsapp:
 	- docker logs -f infra-app-1
+
+run:
+	- docker exec -it infra-app-1 npm run dev
 
 test:
 	- docker exec -it infra-app-1 npm run test:watch

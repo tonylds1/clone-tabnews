@@ -1,9 +1,5 @@
 function Home() {
-  return (
-    <h2>
-      Hey Carson and Steve!
-    </h2>
-  );
+  return <h2>Hey Carson and Steve!</h2>;
 }
 
 function teste() {
